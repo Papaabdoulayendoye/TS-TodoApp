@@ -1,0 +1,148 @@
+.Container {
+    min-height: 390px;
+    width: 450px;
+    background-color: rgb(3, 15, 30);
+    /* background-color: #fff; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.Header {
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.525);
+    & > h1 {
+        color: #fafafa;
+    }
+}
+
+.Body {
+    margin: 15px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    & > .newTodo {
+        position: relative;
+        display: flex;
+        column-gap: 9px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        & > input{
+            padding: 3px ;
+        }
+        & > input[type='text'] {
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 5px;
+        }
+        & > input[type='submit'] {
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+}
+.Todos {
+    margin-top: 15px;
+    /* margin: 0 auto; */
+    & > ul {
+        position: relative;
+        & > li {
+            position: relative;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin:10px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            
+            column-gap: 10px;
+            /* margin: 0 20px; */
+            & > input {
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+                z-index: -1;
+                opacity: 0;
+            }
+            & > span {
+                color: #fff;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+.Todos li > i {
+    position: absolute;
+    /* top: 2px; */
+    left: 0;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+li input[type='checkbox']:checked ~ i {
+    top: 1px;
+    border-top: none;
+    border-right: none;
+    height: 15px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+li span {
+    position: relative;
+    display: flex;
+    align-items: center;
+    left: 8px;
+}
+li span::before {
+    content: '';
+    position: absolute;
+    z-index: 111;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #fafafa;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease;
+}
+li input[type='checkbox']:checked ~ span::before {
+    /* width: 100%; */
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+li input[type='checkbox']:checked ~ span {
+    color: #454545;
+}
+
+.BTN {
+    position: absolute;
+    right: 0;
+}
+.DEL, 
+.COM{
+    background-color: #f00;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+}
+.COM {
+    background-color: rgba(0, 0, 255);
+    padding : 5px;
+}
+.DEL:hover {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.COM:hover {
+    background-color: rgba(0, 0, 255, 0.4);
+}
