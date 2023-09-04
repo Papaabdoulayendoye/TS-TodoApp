@@ -144,5 +144,6 @@ li input[type='checkbox']:checked ~ span {
     background-color: rgba(255, 0, 0, 0.5);
 }
 .COM:hover {
+    /* background-color: rgba(0, 0, 255, 0.4); */
     background-color: rgba(0, 0, 255, 0.4);
 }
