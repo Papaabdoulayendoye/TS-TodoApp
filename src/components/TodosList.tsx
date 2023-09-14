@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import styles from "../styles/TodosList.module.css";
 // import uuid = require('react-uuid/uuid')
 import { v4 } from "uuid";
