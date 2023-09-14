@@ -1,5 +1,4 @@
-import React from 'react'
-import TodosList from './TodoList/TodosList'
+import TodosList from './components/TodosList'
 
 export default function App() {
     return (
