@@ -18,11 +18,16 @@ const Todos = ({ todo, DeleteTodo, CompleteTodo } : todoProps) => {
                     className={styles.DEL}
                     style={{padding : " 5px", borderRadius : "3px"}}
                     onClick={() => DeleteTodo(todo.id)}
-                    >Delete</button>
+                    >Supprimer</button>
+                <button 
+                    className={styles.MOD}
+                    style={{padding : " 5px", borderRadius : "3px"}}
+                    onClick={() => DeleteTodo(todo.id)}
+                    >Modifier</button>
                 <button 
                     className={styles.COM}
                     onClick={() => CompleteTodo(todo.id)}
-                >Complete</button>
+                >Complet</button>
             </div>
         </li>
     )

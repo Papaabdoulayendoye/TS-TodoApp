@@ -1,6 +1,5 @@
 import { useState} from "react";
 import styles from "../styles/TodosList.module.css";
-// import uuid = require('react-uuid/uuid')
 import { v4 } from "uuid";
 import Todos  from './Todos';
 import { toast } from "react-toastify";
@@ -18,14 +17,21 @@ function TodosList() {
     
     
     const createNewTodo = () => {
-    setTodos((prev) => {
-        return [...prev, { id: v4(), myTodo: newTodo, complete: false }];
-        // return [...prev ? [...prev, {id :v4(), myTodo : newTodo, complete : false } ] : [] ] // HERE...
-    });
-    setNewTodo('')
-    toast.success("A new Todo to complete has been added  👍!", {
-        position : toast.POSITION.TOP_RIGHT
-    })
+    if (newTodo !== '') {
+        
+        setTodos((prev) => {
+            return [...prev, { id: v4(), myTodo: newTodo, complete: false }];
+            // return [...prev ? [...prev, {id :v4(), myTodo : newTodo, complete : false } ] : [] ] // HERE...
+        });
+        setNewTodo('')
+        toast.success("A new Todo to complete has been added  👍!", {
+            position : toast.POSITION.TOP_RIGHT
+        })
+    }else{
+        toast.warn("Input required. 👎📛", {
+            position : toast.POSITION.TOP_RIGHT
+        })
+    }
     };
     
     
